@@ -34,7 +34,7 @@ class Warehouse:
         self._flowers[flower.specie] -= flower.amount
         self._event_dispatcher.dispatch_event(Event(AvailableEvents.FLOWER_REMOVED_FROM_STOCK, flower))
 
-    def stop_adding_flowers(self, *args):
+    def stop_adding_flowers(self, _):
         self.needs_more_flowers = False
 
     def get_stock(self):

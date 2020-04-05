@@ -24,12 +24,3 @@ class EventDispatcher:
             listeners = self._events.get(event_type, [])
             listeners.append(listener)
             self._events[event_type] = listeners
-
-    def remove_event_listener(self, event_type: Event, listener) -> None:
-        if self.has_listener(event_type, listener):
-            listeners = self._events[event_type]
-            if len(listeners) == 1:
-                del self._events[event_type]
-            else:
-                listeners.remove(listener)
-                self._events[event_type] = listeners
